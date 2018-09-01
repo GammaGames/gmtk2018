@@ -7,7 +7,7 @@ func _process(delta):
 
 	if cooking:
 		amount -= 15 * delta
-	if amount <= 0:
+	if amount <= 20:
 		cooked = true
 
 	var c = amount / 100

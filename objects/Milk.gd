@@ -14,6 +14,3 @@ func _physics_process(delta):
             var b = blob.instance()
             b.global_position = $Particles.global_position
             $"..".add_child(b)
-
-func hit(body):
-    print(body.name)

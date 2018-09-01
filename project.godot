@@ -14,6 +14,10 @@ config/name="gmtk2018"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+State="*res://scenes/State.tscn"
+
 [display]
 
 window/size/width=1366

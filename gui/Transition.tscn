@@ -150,7 +150,7 @@ tracks/0/keys = {
 "values": [ Vector2( 190, 100 ), Vector2( -190, 100 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RigidBody2D/Label:visible")
+tracks/1/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -162,7 +162,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("RigidBody2D/Label:visible")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -171,7 +171,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, false ]
+"values": [ true, true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -193,7 +193,7 @@ tracks/0/keys = {
 "values": [ Vector2( 190, 100 ), Vector2( -190, 100 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RigidBody2D/Label:visible")
+tracks/1/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -205,7 +205,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("RigidBody2D/Label:visible")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -236,7 +236,7 @@ tracks/0/keys = {
 "values": [ Vector2( 190, 100 ), Vector2( -190, 100 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RigidBody2D/Label:visible")
+tracks/1/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -245,10 +245,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, false ]
+"values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RigidBody2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("RigidBody2D/Label:visible")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -257,7 +257,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, true ]
+"values": [ false, false ]
 }
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -265,7 +265,7 @@ tracks/2/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 190, 100 )
 
-[node name="Transition" type="CanvasLayer"]
+[node name="Transition" type="CanvasLayer" index="0"]
 
 layer = 10
 offset = Vector2( 0, 0 )
@@ -295,6 +295,7 @@ blend_times = [  ]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
 
+visible = false
 position = Vector2( 190, 100 )
 input_pickable = false
 collision_layer = 1
@@ -322,7 +323,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
 
 shape = SubResource( 7 )
-disabled = true
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D" index="1"]
 

@@ -3,12 +3,14 @@ extends RigidBody2D
 signal complete
 
 var complete = false
+var emitted = false
 var is_held = false
 var drag_speed = 20
 
 func _process(delta):
-    if complete:
+    if complete and !emitted:
         emit_signal("complete")
+        emitted = true
 
 func _physics_process(delta):
     if is_held:

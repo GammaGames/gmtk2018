@@ -8,8 +8,9 @@ func _process(delta):
         pass
     else:
         pass
-    if cooked:
+    if cooked and !emitted:
         emit_signal("complete")
+        emitted = true
 
 func cook(status):
     cooking = status
