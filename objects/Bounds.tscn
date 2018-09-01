@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 404.702, 4.39176 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 173.562, 4.39176 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 242.264, 4.39176 )
+
+[node name="Bounds" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 0.0
+custom_integrator = true
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="Top" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 192.995, -212.337 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 171.649, 194.976 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Left" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -94.4532, -18.2457 )
+rotation = 1.10064
+shape = SubResource( 3 )
+
+[node name="Left2" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 470.934, -12.8707 )
+rotation = 2.12254
+shape = SubResource( 3 )
+
+
