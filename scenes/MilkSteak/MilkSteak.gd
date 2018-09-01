@@ -1,7 +1,7 @@
 extends Node2D
 
 var num_steps = 3
-var current = 0
+var current = 2
 var steps = []
 var step = null
 
@@ -14,7 +14,8 @@ func _ready():
 	go_to_step(current)
 
 func _next_step():
-	step.disconnect("complete", self, "_next_step")
+	if step != null:
+		step.disconnect("complete", self, "_next_step")
 	remove_child(step)
 	step.queue_free()
 	current += 1

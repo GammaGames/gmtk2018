@@ -135,13 +135,13 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="Hand" type="Area2D" index="0"]
+[node name="Hand" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -153,20 +153,14 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="held" type="Node2D" parent="." index="0"]
-
-z_index = 10
-z_as_relative = false
-_sections_unfolded = [ "Z Index" ]
-
-[node name="open" type="Sprite" parent="." index="1"]
+[node name="open" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, 70 )
 rotation = -0.0872665
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="closed" type="Sprite" parent="." index="2"]
+[node name="closed" type="Sprite" parent="." index="1"]
 
 visible = false
 position = Vector2( 0, 70 )
@@ -174,7 +168,7 @@ rotation = -0.0872665
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="point" type="Sprite" parent="." index="3"]
+[node name="point" type="Sprite" parent="." index="2"]
 
 visible = false
 position = Vector2( 0, 70 )
@@ -182,13 +176,13 @@ rotation = -0.0872665
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="bandaid" type="Sprite" parent="." index="4"]
+[node name="bandaid" type="Sprite" parent="." index="3"]
 
 position = Vector2( 9, 6 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = "open"
@@ -200,11 +194,11 @@ anims/open = SubResource( 2 )
 anims/point = SubResource( 3 )
 blend_times = [  ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="5"]
 
 modulate = Color( 0, 1, 0.835938, 1 )
 rotation = 1.5708
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 

@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://objects/Table.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Stove.gd" type="Script" id=2]
+[ext_resource path="res://sprites/stove.png" type="Texture" id=3]
+[ext_resource path="res://sprites/fire.png" type="Texture" id=4]
+[ext_resource path="res://sprites/dial_missing.png" type="Texture" id=5]
+[ext_resource path="res://sprites/dial_broken.png" type="Texture" id=6]
+[ext_resource path="res://objects/Dial.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/FrisbeeSteak.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 15.0526
+height = 71.4344
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 0.104677, 0.737194, 1 )
+colors = PoolColorArray( 0.3, 0.3, 0.3, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 128
+
+[sub_resource type="ParticlesMaterial" id=3]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 10, 20, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 20.0
+flatness = 0.0
+gravity = Vector3( -120, 0, 0 )
+initial_velocity = 90.0
+initial_velocity_random = 0.0
+angular_velocity = 2.30093e-42
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -90.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 2 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Spread" ]
+
+[node name="Stove" instance=ExtResource( 1 )]
+
+position = Vector2( 41.7545, 3.21189 )
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="Heat" type="Area2D" parent="." index="2"]
+
+position = Vector2( 234.588, 139.52 )
+rotation = -1.5708
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Pickable" ]
+
+[node name="Shape" type="CollisionShape2D" parent="Heat" index="0"]
+
+position = Vector2( 7.37265, -2.61609 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Fire" type="Particles2D" parent="." index="3"]
+
+position = Vector2( 234.588, 139.52 )
+rotation = -1.5708
+emitting = false
+amount = 16
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Transform" ]
+
+[node name="Dial1" type="Sprite" parent="." index="4"]
+
+position = Vector2( 109.536, 179.108 )
+texture = ExtResource( 5 )
+
+[node name="Dial2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 147.288, 179.546 )
+rotation = -1.5708
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Dial3" type="Sprite" parent="." index="6"]
+
+position = Vector2( 184.114, 179.38 )
+texture = ExtResource( 5 )
+
+[node name="Dial4" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 226.405, 180.19 )
+_sections_unfolded = [ "Pickable", "Transform" ]
+
+[node name="Frisbee" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 112.05, -1.86681 )
+
+

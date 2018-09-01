@@ -1,4 +1,4 @@
-extends "res://Pickable.gd"
+extends "res://Grabbable.gd"
 
 func _ready():
 	$VisibilityNotifier2D.connect("screen_exited", self, "_screen_exited")

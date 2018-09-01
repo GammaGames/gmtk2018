@@ -1,6 +1,4 @@
-extends "res://Pickable.gd"
-
-signal complete
+extends "res://Grabbable.gd"
 
 var hits = 10
 
@@ -12,4 +10,6 @@ func hit(body):
     if hits > 0:
         get_node("Wound" + str(hits)).visible = true
     elif hits == 0:
-        emit_signal("complete")
+        complete = true
+    else:
+        complete = false

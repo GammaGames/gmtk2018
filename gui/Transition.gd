@@ -12,7 +12,6 @@ func play(text, step):
 	$RigidBody2D/Label.text = '"' + text + '"'
 	$AnimationPlayer.play(step)
 
-
 func play_disabled(step):
 		$AnimationPlayer.play(step + "_disabled")
 

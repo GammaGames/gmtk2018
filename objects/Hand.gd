@@ -14,6 +14,7 @@ func _input(event):
 		if event.pressed and $AnimationPlayer.current_animation != "close":
 			$AnimationPlayer.play("close")
 			var bodies = get_overlapping_bodies()
+			var areas = get_overlapping_areas()
 			if bodies.size():
 				var body = null
 				for b in bodies:
@@ -24,6 +25,14 @@ func _input(event):
 					holding = body
 					if body.has_method("grab"):
 						body.grab()
+			elif areas.size():
+				var area = null
+				for a in areas:
+					if a.input_pickable:
+						area = a
+				if area:
+					if area.has_method("click"):
+						area.click()
 			else:
 				punching = true
 		elif !event.pressed and $AnimationPlayer.current_animation != "open":

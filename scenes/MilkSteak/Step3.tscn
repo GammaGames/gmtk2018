@@ -1,10 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Step.gd" type="Script" id=1]
+[ext_resource path="res://scenes/MilkSteak/Step3.gd" type="Script" id=1]
+[ext_resource path="res://objects/Stove.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/Goal.tscn" type="PackedScene" id=3]
 
 [node name="Step3" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
+
+[node name="Table" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 0, 0 )
+_sections_unfolded = [ "Transform", "collision" ]
+
+[node name="Goal" parent="." index="1" instance=ExtResource( 3 )]
 
 

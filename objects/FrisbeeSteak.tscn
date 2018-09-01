@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://objects/Frisbee.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/FrisbeeSteak.gd" type="Script" id=2]
+[ext_resource path="res://sprites/milk_bubble.png" type="Texture" id=3]
+[ext_resource path="res://objects/BeatenSteak.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/frisbee_milk.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bandaid.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.90725, 32.6012 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.2158, 2.61503 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4.74929, 2.61503 )
+
+[node name="Frisbee" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.157784, 21.458 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -47.4916, 8.36231 )
+rotation = 0.661244
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 45.756, 5.99562 )
+rotation = 2.30609
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( 56.6961, -11.3658 )
+rotation = 1.5907
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." index="5"]
+
+position = Vector2( -59.6014, -8.27401 )
+rotation = 1.5907
+shape = SubResource( 3 )
+
+[node name="Beat" parent="." index="7"]
+
+visible = false
+
+[node name="Milk" parent="." index="8"]
+
+editor/display_folded = true
+frame = 4
+
+[node name="Bubble2" type="Sprite" parent="Milk" index="0"]
+
+position = Vector2( -27.6223, -12.937 )
+texture = ExtResource( 3 )
+
+[node name="Bubble3" type="Sprite" parent="Milk" index="1"]
+
+position = Vector2( 4.37063, -15.7342 )
+texture = ExtResource( 3 )
+
+[node name="Bubble4" type="Sprite" parent="Milk" index="2"]
+
+position = Vector2( -44.2307, -0.699299 )
+texture = ExtResource( 3 )
+
+[node name="Bubble5" type="Sprite" parent="Milk" index="3"]
+
+position = Vector2( 29.5454, -12.4126 )
+texture = ExtResource( 3 )
+
+[node name="Bubble7" type="Sprite" parent="Milk" index="4"]
+
+position = Vector2( 16.0839, -3.67132 )
+texture = ExtResource( 3 )
+
+[node name="Steak" parent="." index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 0.475647, -63.9755 )
+
+[node name="MilkForeground" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+texture = ExtResource( 5 )
+vframes = 5
+frame = 2
+_sections_unfolded = [ "Animation" ]
+
+[node name="Bubble1" type="Sprite" parent="MilkForeground" index="0"]
+
+position = Vector2( 25.3496, 10.8391 )
+texture = ExtResource( 3 )
+
+[node name="Bubble6" type="Sprite" parent="MilkForeground" index="1"]
+
+position = Vector2( 6.29371, 5.24475 )
+texture = ExtResource( 3 )
+
+[node name="Bubble8" type="Sprite" parent="MilkForeground" index="2"]
+
+position = Vector2( 39.5104, 1.74825 )
+texture = ExtResource( 3 )
+
+[node name="Bubble9" type="Sprite" parent="MilkForeground" index="3"]
+
+position = Vector2( -10.4895, 7.86713 )
+rotation = -0.474975
+texture = ExtResource( 6 )
+
+[node name="Bubble10" type="Sprite" parent="MilkForeground" index="4"]
+
+position = Vector2( -27.2727, 11.5385 )
+texture = ExtResource( 3 )
+
+

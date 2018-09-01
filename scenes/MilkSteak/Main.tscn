@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes/MilkSteak/MilkSteak.gd" type="Script" id=1]
 [ext_resource path="res://objects/Bounds.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/Hand.tscn" type="PackedScene" id=3]
-[ext_resource path="res://gui/Transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gui/Transition.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/Hand.tscn" type="PackedScene" id=4]
 
 [node name="Kitchen" type="Node2D"]
 
@@ -13,13 +13,13 @@ script = ExtResource( 1 )
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Hand" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Transition" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 240.041, 78.2146 )
-z_index = 10
+[node name="Hand" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 246.777, 89.6118 )
+z_index = 5
 z_as_relative = false
 _sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Transition" parent="." index="2" instance=ExtResource( 4 )]
 
 

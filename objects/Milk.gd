@@ -1,4 +1,4 @@
-extends "res://Pickable.gd"
+extends "res://Grabbable.gd"
 
 var cap = true
 onready var blob = preload("res://objects/MilkBlob.tscn")
