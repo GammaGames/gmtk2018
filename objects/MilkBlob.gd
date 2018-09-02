@@ -1,10 +1,10 @@
 extends Area2D
 
 var life = 1
+var origin = "Milk"
 
 func _ready():
 	connect("body_shape_entered", self, "_body_shape_entered")
-	add_to_group("milk")
 
 func _process(delta):
 	global_position.y += 80 * delta
@@ -15,6 +15,6 @@ func _process(delta):
 
 func _body_shape_entered(body_id, body, body_shape, area_shape):
 	if body.has_method("fill"):
-		body.fill(.4)
+		body.fill(origin)
 		disconnect("body_shape_entered", self, "_body_shape_entered")
 		queue_free()

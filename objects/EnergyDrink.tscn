@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://objects/Milk.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/EnergyDrink.gd" type="Script" id=2]
+[ext_resource path="res://sprites/energy_drink.png" type="Texture" id=3]
+[ext_resource path="res://sprites/energy_drink_cap.png" type="Texture" id=4]
+
+[node name="EnergyDrink" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Particles" parent="." index="0"]
+
+modulate = Color( 0, 0.367188, 1, 0.729294 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0.815376, 3.51027 )
+
+[node name="Cap" parent="." index="4"]
+
+position = Vector2( 1.04583, -54.4007 )
+
+[node name="Sprite" parent="Cap" index="0"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" parent="Cap" index="1"]
+
+position = Vector2( -0.0721436, 1.35786 )
+
+[node name="VisibilityNotifier2D" parent="Cap" index="2"]
+
+position = Vector2( 0.0349293, 1.15982 )
+scale = Vector2( 1.299, 0.4 )
+
+

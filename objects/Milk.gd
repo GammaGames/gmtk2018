@@ -12,5 +12,6 @@ func _physics_process(delta):
         $Particles.emitting = overturned
         if overturned:
             var b = blob.instance()
+            b.origin = name
             b.global_position = $Particles.global_position
             $"..".add_child(b)

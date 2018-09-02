@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objects/BaseGrabbable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Cup.gd" type="Script" id=2]
+[ext_resource path="res://sprites/cup.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cup_liquid.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 16.9721
+height = 30.8253
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 6.42643
+height = 15.8465
+
+[node name="Cup" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0.524467, 30.5943 )
+rotation = 1.5708
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Liquid" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 4 )
+vframes = 6
+_sections_unfolded = [ "Animation" ]
+
+
