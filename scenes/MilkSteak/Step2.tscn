@@ -7,7 +7,7 @@
 [ext_resource path="res://objects/Frisbee.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/Milk.tscn" type="PackedScene" id=6]
 
-[node name="Step2" type="Node2D" index="0"]
+[node name="Step2" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Visibility" ]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/GrilledCharlie/Step1.gd" type="Script" id=1]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gui/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/PeanutButter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Bread.tscn" type="PackedScene" id=5]
 
 [node name="Step1" type="Node2D"]
 
@@ -18,5 +19,9 @@ script = ExtResource( 1 )
 
 position = Vector2( 227.736, 58.7514 )
 rotation = -0.206668
+
+[node name="Bread" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 120.474, 79.5559 )
 
 

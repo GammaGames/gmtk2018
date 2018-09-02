@@ -1,12 +1,7 @@
-extends RigidBody2D
+extends "res://Grabbable.gd"
 
-var origin = "Milk"
+var origin = "PeanutButter"
 
 func _ready():
-	connect("body_entered", self, "_body_entered")
-
-func _body_entered(body):
-	if body.has_method("fill"):
-		body.fill(origin)
-		disconnect("body_entered", self, "_body_entered")
-		queue_free()
+    global_rotation = deg2rad(randf() * 360)
+    connect("body_entered", self, "_body_entered")

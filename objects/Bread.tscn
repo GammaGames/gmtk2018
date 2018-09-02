@@ -1,22 +1,61 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://objects/BaseGrabbable.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/bread.png" type="Texture" id=2]
+[ext_resource path="res://objects/Bread.gd" type="Script" id=2]
+[ext_resource path="res://sprites/bread.png" type="Texture" id=3]
+[ext_resource path="res://sprites/bread_peanutbutter.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bread_chocolate.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 27.4615, 26.091 )
+extents = Vector2( 22.5335, 20.9232 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.9358, 25.4867 )
 
 [node name="Bread" index="0" instance=ExtResource( 1 )]
 
+script = ExtResource( 2 )
+
 [node name="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -1.04895, 3.67133 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
+
+[node name="PeanutButter" type="Sprite" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 4 )
+vframes = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="Chocolate" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 5 )
+vframes = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="Area" type="Area2D" parent="." index="4"]
+
+position = Vector2( -1.27581, 2.66759 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" index="0"]
+
+shape = SubResource( 2 )
 
 

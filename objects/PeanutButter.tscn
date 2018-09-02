@@ -29,6 +29,7 @@ script = ExtResource( 2 )
 [node name="Particles" parent="." index="0"]
 
 visible = false
+position = Vector2( 0, -27 )
 
 [node name="Sprite" parent="." index="1"]
 

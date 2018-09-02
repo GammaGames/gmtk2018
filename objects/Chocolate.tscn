@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/Milk.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Chocolate.gd" type="Script" id=2]
+[ext_resource path="res://sprites/chocolate.png" type="Texture" id=3]
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 200, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.5
+scale_random = 1.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Gravity", "Scale" ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 21.708
+height = 30.9669
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.9634
+height = 20.9053
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11, 4 )
+
+[node name="Chocolate" index="0" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Particles" parent="." index="0"]
+
+modulate = Color( 0.339844, 0.167267, 0, 1 )
+process_material = SubResource( 4 )
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" parent="." index="3"]
+
+position = Vector2( 0.291992, 44.6742 )
+shape = SubResource( 2 )
+
+[node name="Cap" parent="." index="4"]
+
+visible = false
+
+[node name="CollisionShape2D" parent="Cap" index="1"]
+
+shape = SubResource( 3 )
+
+

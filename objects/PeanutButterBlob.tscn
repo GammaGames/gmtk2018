@@ -10,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 7.47538
 height = 21.0912
 
-[node name="PeanutButterBlob" index="0" instance=ExtResource( 1 )]
+[node name="PeanutButterBlob" instance=ExtResource( 1 )]
 
 gravity_scale = 2.0
 script = ExtResource( 2 )
