@@ -48,21 +48,21 @@ _sections_unfolded = [ "Gravity", "Scale" ]
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 17.708
-height = 39.0078
+radius = 28.7284
+height = 30.9669
 
 [sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 10.9634
-height = 15.4892
+height = 27.4892
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6.54827, 3 )
 
-[node name="Milk" type="RigidBody2D"]
+[node name="Milk" type="RigidBody2D" index="0"]
 
 input_pickable = true
 collision_layer = 1

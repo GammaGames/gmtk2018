@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://objects/Milk.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/EnergyDrink.gd" type="Script" id=2]
 [ext_resource path="res://sprites/energy_drink.png" type="Texture" id=3]
 [ext_resource path="res://sprites/energy_drink_cap.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 28.7284
+height = 14.3961
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 10.9634
+height = 40.1617
 
 [node name="EnergyDrink" instance=ExtResource( 1 )]
 
@@ -21,6 +33,11 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0.815376, 3.51027 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" parent="." index="3"]
+
+shape = SubResource( 2 )
 
 [node name="Cap" parent="." index="4"]
 

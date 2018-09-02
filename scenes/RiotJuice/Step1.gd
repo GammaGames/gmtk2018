@@ -10,5 +10,5 @@ func _ready():
 
 func _vodka():
     var v = vodka.instance()
-    $"..".add_child(v)
-    v.global_position = Vector2(180, -80)
+    add_child(v)
+    v.global_position = Vector2(90, -80)

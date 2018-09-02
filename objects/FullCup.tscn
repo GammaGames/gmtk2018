@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://objects/Cup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/FullCup.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.5641, 4.39351 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.69527, 34.9726 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.15672, 35.267 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 20.0
+height = 40.0
+
+[node name="FullCup" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.214645, 37.3473 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" parent="." index="2"]
+
+position = Vector2( -18.3638, 1.8326 )
+rotation = 3.05788
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 19.1981, 1.61796 )
+rotation = 3.24422
+shape = SubResource( 3 )
+
+[node name="Liquid" parent="." index="4"]
+
+frame = 5
+
+[node name="Area" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area" index="0"]
+
+shape = SubResource( 4 )
+
+

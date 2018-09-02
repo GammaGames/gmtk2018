@@ -16,7 +16,6 @@ func _process(delta):
         var frame = floor((60 - vodka_amount) / 20) + 2
         $Liquid.frame =  frame
 
-
 func fill(name):
     match name:
         "EnergyDrink":
@@ -29,6 +28,5 @@ func fill(name):
             vodka_amount -= .4
             if vodka_amount <= 0 and !vodka_full:
                 vodka_full = true
-                $"../Goal".set_text("Add Ice")
                 $Liquid.frame =  5
                 complete = true
