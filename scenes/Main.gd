@@ -10,6 +10,10 @@ func _ready():
             $Transition.play("The Gang Made Milk Steak", "out")
         "RiotJuice":
             $Transition.play("The Gang Made Riot Juice", "out")
+        "GrilledCharlie":
+            $Transition.play("The Gang Made Grilled Charlie", "out")
+        null:
+            $Transition.splash()
 
     State.current_transition = null
 

@@ -9,6 +9,9 @@ func _ready():
     $AnimationPlayer.connect("animation_started", self, "_animation_started")
     $AnimationPlayer.connect("animation_finished", self, "_animation_finished")
 
+func splash():
+    $AnimationPlayer.play("splash")
+
 func play(text, step):
     $RigidBody2D/Label.text = '"' + text + '"'
     $AnimationPlayer.play(step)

@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "close"
-length = 0.1
+length = 0.2
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -48,11 +48,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 
 resource_name = "open"
-length = 0.1
+length = 0.2
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -90,6 +102,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -10.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -141,8 +165,9 @@ custom_solver_bias = 0.0
 radius = 21.6915
 height = 14.2486
 
-[node name="Hand" type="Area2D"]
+[node name="Hand" type="Area2D" index="0"]
 
+rotation = -0.174533
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -155,15 +180,15 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="open" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, 70 )
+position = Vector2( 10, 200 )
 rotation = -0.0872665
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform" ]
 
 [node name="closed" type="Sprite" parent="." index="1"]
 
 visible = false
-position = Vector2( 0, 70 )
+position = Vector2( 10, 200 )
 rotation = -0.0872665
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -171,7 +196,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="point" type="Sprite" parent="." index="2"]
 
 visible = false
-position = Vector2( 0, 70 )
+position = Vector2( 10, 200 )
 rotation = -0.0872665
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]

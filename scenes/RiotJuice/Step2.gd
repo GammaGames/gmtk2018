@@ -5,7 +5,7 @@ onready var ice = preload("res://objects/Ice.tscn")
 func _ready():
     $Cup.connect("complete", self, "_complete")
     $IceTimer.connect("timeout", self, "_timeout")
-    $Goal/Margin/Label.text = "Catch Ice"
+    $Goal.set_text("Catch Ice")
 
 func _timeout():
     var i = ice.instance()

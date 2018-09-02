@@ -132,6 +132,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Milk" type="Sprite" parent="." index="4"]
 
+visible = false
 texture = ExtResource( 5 )
 vframes = 5
 _sections_unfolded = [ "Animation" ]

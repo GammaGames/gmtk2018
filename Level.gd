@@ -40,3 +40,7 @@ func _exit():
 func quit_to_main():
     State.current_transition = level
     get_tree().change_scene("res://scenes/Main.tscn")
+
+func _input(event):
+    if Input.is_action_pressed("ui_cancel"):
+        get_tree().change_scene("res://scenes/Main.tscn")

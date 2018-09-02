@@ -1,6 +1,6 @@
 extends "res://Grabbable.gd"
 
-var ice_count = 5
+var ice_count = 6
 
 func _ready():
     $Area.connect("body_entered", self, "_body_entered")

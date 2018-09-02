@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Quirky Dog.ogg-3eb986710c8d8ffb847a5410e437210b.oggstr"
+
+[deps]
+
+source_file="res://sound/Quirky Dog.ogg"
+dest_files=[ "res://.import/Quirky Dog.ogg-3eb986710c8d8ffb847a5410e437210b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

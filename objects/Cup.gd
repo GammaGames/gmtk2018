@@ -22,7 +22,6 @@ func fill(name):
             energy_amount -= .4
             if energy_amount <= 0 and !energy_full:
                 energy_full = true
-                $"../Goal".set_text("Add Spririts")
                 emit_signal("vodka")
         "Vodka":
             vodka_amount -= .4

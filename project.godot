@@ -10,13 +10,15 @@ config_version=3
 
 [application]
 
-config/name="gmtk2018"
+config/name="Kelly Korner"
 run/main_scene="res://scenes/Main.tscn"
+boot_splash/image="res://gui/splash.png"
 config/icon="res://icon.png"
 
 [autoload]
 
 State="*res://scenes/State.tscn"
+Sound="*res://scenes/Sound.tscn"
 
 [display]
 

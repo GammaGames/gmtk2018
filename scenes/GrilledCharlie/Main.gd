@@ -2,7 +2,7 @@ extends "res://Level.gd"
 
 func _ready():
     level = "GrilledCharlie"
-    num_steps = 2
+    num_steps = 3
     $Transition.play("The Gang Makes Grilled Charlie", "out")
     load_steps()
 

@@ -1,30 +1,33 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Bounds.tscn" type="PackedScene" id=2]
-[ext_resource path="res://gui/Transition.tscn" type="PackedScene" id=3]
-[ext_resource path="res://objects/Hand.tscn" type="PackedScene" id=4]
-[ext_resource path="res://objects/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Table.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/Transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/Hand.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/MenuButton.gd" type="Script" id=6]
-[ext_resource path="res://gui/Textile_16.tres" type="DynamicFont" id=7]
-[ext_resource path="res://objects/Bug.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/Ghoul.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sprites/banner.png" type="Texture" id=10]
+[ext_resource path="res://objects/button_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://objects/button.tres" type="StyleBox" id=8]
+[ext_resource path="res://gui/Textile_16.tres" type="DynamicFont" id=9]
+[ext_resource path="res://objects/Bug.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Ghoul.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sprites/banner.png" type="Texture" id=12]
+[ext_resource path="res://gui/Help.tscn" type="PackedScene" id=13]
 
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 49.595, 13.1109 )
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 48.8552, 13.1109 )
+extents = Vector2( 47.3943, 13.1109 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64.6333, 13.1109 )
+extents = Vector2( 47.7938, 13.1109 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 61.9083, 13.1109 )
 
 [node name="Main" type="Node2D"]
 
@@ -33,21 +36,22 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Bounds" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="Transition" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Table" parent="." index="1" instance=ExtResource( 3 )]
 
-[node name="Hand" parent="." index="2" instance=ExtResource( 4 )]
+_sections_unfolded = [ "Transform", "collision" ]
+
+[node name="Transition" parent="." index="2" instance=ExtResource( 4 )]
+
+[node name="Hand" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 326.497, 14.655 )
 z_index = 5
 z_as_relative = false
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Table" parent="." index="3" instance=ExtResource( 5 )]
-
-_sections_unfolded = [ "Transform", "collision" ]
-
 [node name="MilkSteak" type="RigidBody2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 170.322, 53.5066 )
 rotation = -0.373845
 input_pickable = true
@@ -73,7 +77,7 @@ _sections_unfolded = [ "Pickable" ]
 __meta__ = {
 "_edit_group_": true
 }
-text = "The Gnag Makes Milk Steak"
+text = "The Gang Makes Milk Steak"
 
 [node name="Button" type="Button" parent="MilkSteak" index="0"]
 
@@ -92,7 +96,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 7 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -100,15 +109,17 @@ group = null
 text = "Milk Steak"
 flat = false
 align = 1
+_sections_unfolded = [ "Material", "custom_styles" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MilkSteak" index="1"]
 
-position = Vector2( 2.75703, -0.351204 )
-shape = SubResource( 4 )
+position = Vector2( 0.231003, 0.198189 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RiotJuice" type="RigidBody2D" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 244.327, -39.4503 )
 rotation = 0.194646
 input_pickable = true
@@ -130,7 +141,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 6 )
-_sections_unfolded = [ "Pickable" ]
+_sections_unfolded = [ "Pickable", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -145,7 +156,7 @@ anchor_bottom = 0.0
 margin_left = -47.0
 margin_top = -13.0
 margin_right = 48.0
-margin_bottom = 13.0
+margin_bottom = 12.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -153,7 +164,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 7 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -161,14 +177,17 @@ group = null
 text = "Riot Juice"
 flat = false
 align = 1
+_sections_unfolded = [ "Material", "Visibility", "custom_styles" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiotJuice" index="1"]
 
-shape = SubResource( 3 )
+position = Vector2( 0.351685, -0.0693359 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="GrilledCharlie" type="RigidBody2D" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 105.996, -48.096 )
 rotation = -0.197959
 input_pickable = true
@@ -202,9 +221,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -47.0
+margin_left = -43.0
 margin_top = -13.0
-margin_right = 48.0
+margin_right = 80.0
 margin_bottom = 13.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -213,7 +232,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 7 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 8 )
+custom_fonts/font = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -221,24 +245,25 @@ group = null
 text = "Grilled Charlie"
 flat = false
 align = 1
+_sections_unfolded = [ "Material", "custom_styles" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrilledCharlie" index="1"]
 
-position = Vector2( 17.5762, -0.130707 )
-shape = SubResource( 2 )
+position = Vector2( 18.6306, 0.0807991 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Bug" parent="." index="7" instance=ExtResource( 8 )]
+[node name="Bug" parent="." index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 249.383, 77.3462 )
 rotation = -0.863363
 
-[node name="Bug2" parent="." index="8" instance=ExtResource( 8 )]
+[node name="Bug2" parent="." index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 146.971, -7.02146 )
 rotation = -2.30933
 
-[node name="BasePickable" parent="." index="9" instance=ExtResource( 9 )]
+[node name="BasePickable" parent="." index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 424.727, -179.64 )
 rotation = -0.438118
@@ -248,7 +273,9 @@ rotation = -0.438118
 position = Vector2( 172.636, 38.2171 )
 z_index = 10
 z_as_relative = false
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Z Index" ]
 
+[node name="Help" parent="." index="11" instance=ExtResource( 13 )]
 
+layer = 0

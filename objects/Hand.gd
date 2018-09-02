@@ -4,6 +4,7 @@ var holding = null
 var punching = false
 
 func _ready():
+    global_position = get_global_mouse_position()
     Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     connect("body_entered", self, "_body_entered")
 
@@ -23,7 +24,7 @@ func _input(event):
                         body = b
                 if body:
                     body.is_held = true
-                    holding = body
+                    holding = weakref(body)
                     if body.has_method("grab"):
                         body.grab()
             if areas.size() and body == null:
@@ -38,16 +39,16 @@ func _input(event):
         elif !event.pressed and $AnimationPlayer.current_animation != "open":
             $AnimationPlayer.play("open")
             punching = false
-            if holding:
-                holding.is_held = false
-                holding = null
+            if holding != null and holding.get_ref():
+                holding.get_ref().is_held = false
+            holding = null
 
     if Input.is_action_pressed("rotate_right"):
-        if holding:
-            holding.angular_velocity = -2.5
+        if holding != null and holding.get_ref():
+            holding.get_ref().angular_velocity = -2.5
     elif Input.is_action_pressed("rotate_left"):
-        if holding:
-            holding.angular_velocity = 2.5
+        if holding != null and holding.get_ref():
+            holding.get_ref().angular_velocity = 2.5
 
 func _body_entered(body):
     if punching and body.has_method("hit"):
