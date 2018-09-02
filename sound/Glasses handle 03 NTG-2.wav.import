@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Glasses handle 03 NTG-2.wav-175eaeabfc66b8714d5670c342203685.sample"
+
+[deps]
+
+source_file="res://sound/Glasses handle 03 NTG-2.wav"
+dest_files=[ "res://.import/Glasses handle 03 NTG-2.wav-175eaeabfc66b8714d5670c342203685.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

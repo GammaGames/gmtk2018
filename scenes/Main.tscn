@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Bounds.tscn" type="PackedScene" id=2]
@@ -9,11 +9,22 @@
 [ext_resource path="res://gui/Textile_16.tres" type="DynamicFont" id=7]
 [ext_resource path="res://objects/Bug.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/Ghoul.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/banner.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 49.6174, 13.1109 )
+extents = Vector2( 49.595, 13.1109 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 48.8552, 13.1109 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64.6333, 13.1109 )
 
 [node name="Main" type="Node2D"]
 
@@ -92,8 +103,8 @@ align = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MilkSteak" index="1"]
 
-position = Vector2( 2.62614, -0.0174789 )
-shape = SubResource( 1 )
+position = Vector2( 2.75703, -0.351204 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RiotJuice" type="RigidBody2D" parent="." index="5"]
@@ -153,27 +164,91 @@ align = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RiotJuice" index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Bug" parent="." index="6" instance=ExtResource( 8 )]
+[node name="GrilledCharlie" type="RigidBody2D" parent="." index="6"]
+
+position = Vector2( 105.996, -48.096 )
+rotation = -0.197959
+input_pickable = true
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Pickable" ]
+__meta__ = {
+"_edit_group_": true
+}
+text = "The Gang Makes Grilled Charlie"
+
+[node name="Button" type="Button" parent="GrilledCharlie" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -47.0
+margin_top = -13.0
+margin_right = 48.0
+margin_bottom = 13.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Grilled Charlie"
+flat = false
+align = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrilledCharlie" index="1"]
+
+position = Vector2( 17.5762, -0.130707 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Bug" parent="." index="7" instance=ExtResource( 8 )]
 
 position = Vector2( 249.383, 77.3462 )
 rotation = -0.863363
 
-[node name="Bug2" parent="." index="7" instance=ExtResource( 8 )]
+[node name="Bug2" parent="." index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 146.971, -7.02146 )
 rotation = -2.30933
-
-[node name="Bug3" parent="." index="8" instance=ExtResource( 8 )]
-
-position = Vector2( 161.601, 113.434 )
-rotation = 1.16543
 
 [node name="BasePickable" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 424.727, -179.64 )
 rotation = -0.438118
+
+[node name="Banner" type="Sprite" parent="." index="10"]
+
+position = Vector2( 172.636, 38.2171 )
+z_index = 10
+z_as_relative = false
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Z Index" ]
 
 

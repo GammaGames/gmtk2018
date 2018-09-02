@@ -7,7 +7,9 @@ func _ready():
     $Transition.connect("intro", self, "_intro")
     match State.current_transition:
         "MilkSteak":
-            $Transition.play("The Gang Made Milksteak", "out")
+            $Transition.play("The Gang Made Milk Steak", "out")
+        "RiotJuice":
+            $Transition.play("The Gang Made Riot Juice", "out")
 
     State.current_transition = null
 

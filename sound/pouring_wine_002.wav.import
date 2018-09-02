@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pouring_wine_002.wav-23c61d7ad798d791ae1f63f4f4ed823b.sample"
+
+[deps]
+
+source_file="res://sound/pouring_wine_002.wav"
+dest_files=[ "res://.import/pouring_wine_002.wav-23c61d7ad798d791ae1f63f4f4ed823b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -60,7 +60,7 @@ height = 27.4892
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.54827, 3 )
+extents = Vector2( 11, 4 )
 
 [node name="Milk" type="RigidBody2D" index="0"]
 

@@ -10,5 +10,7 @@ func _ready():
 func _process(delta):
     if !in_cup:
         life -= delta
+        if life < 1:
+            modulate = Color(1, 1, 1, life)
         if life <= 0:
             queue_free()
